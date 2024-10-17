@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    username: root
+    password: Kumar@786
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/sociopuff?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
