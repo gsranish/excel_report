@@ -1,6 +1,6 @@
 package com.anishkumar.controller;
 
-import com.anishkumar.service.ReportService;
+import com.anishkumar.service.ExcelReportService;
 import jakarta.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ReportRestController {
+public class ExcelReportController {
 
     @Autowired
-    private ReportService reportService;
+    private ExcelReportService reportService;
 
     @GetMapping("/excel")
     public void generateExcelReport(HttpServletResponse response) throws Exception{
@@ -23,7 +23,7 @@ public class ReportRestController {
 
         response.setHeader(headerKey, headerValue);
 
-        reportService.generateExcel(response);
+        reportService.generate(response);
 
         response.flushBuffer();
     }
